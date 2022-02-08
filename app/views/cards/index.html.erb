@@ -4,30 +4,20 @@
 
 <%
     values = [2, 3, 4, 5, 6, 7, 8, 9, 10, "jack", "queen", "king", "ace"]
-%>
 
-<%
-    card1_value = rand(0..12)
-    card1_suit = rand(0..3)
-
-    card2_value = rand(0..12)
-    card2_suit = rand(0..3)
-
-    card3_value = rand(0..12)
-    card3_suit = rand(0..3)
-
-    card4_value = rand(0..12)
-    card4_suit = rand(0..3)
-
-    card5_value = rand(0..12)
-    card5_suit = rand(0..3)
+    deck = []
+    for value in values
+        for suit in suits
+            deck << "#{value}_of_#{suit}"
+        end
+    end
+    shuffle_deck = deck.shuffle
 %>
 
 <h1> Here are the cards</h1>
-<p>
-    <img src="/images/cards/<%=values[card1_value]%>_of_<%=suits[card1_suit]%>.svg">
-    <img src="/images/cards/<%=values[card2_value]%>_of_<%=suits[card2_suit]%>.svg">
-    <img src="/images/cards/<%=values[card3_value]%>_of_<%=suits[card3_suit]%>.svg">
-    <img src="/images/cards/<%=values[card4_value]%>_of_<%=suits[card4_suit]%>.svg">
-    <img src="/images/cards/<%=values[card5_value]%>_of_<%=suits[card5_suit]%>.svg">
-</p>
+
+<img src="/images/cards/<%=shuffle_deck[0] %>.svg">
+<img src="/images/cards/<%=shuffle_deck[1] %>.svg">
+<img src="/images/cards/<%=shuffle_deck[2] %>.svg">
+<img src="/images/cards/<%=shuffle_deck[3] %>.svg">
+<img src="/images/cards/<%=shuffle_deck[4] %>.svg">
