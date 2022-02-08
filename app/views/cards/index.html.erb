@@ -12,12 +12,10 @@
         end
     end
     shuffle_deck = deck.shuffle
+    hand = shuffle_deck[0,5]
 %>
 
 <h1> Here are the cards</h1>
-
-<img src="/images/cards/<%=shuffle_deck[0] %>.svg">
-<img src="/images/cards/<%=shuffle_deck[1] %>.svg">
-<img src="/images/cards/<%=shuffle_deck[2] %>.svg">
-<img src="/images/cards/<%=shuffle_deck[3] %>.svg">
-<img src="/images/cards/<%=shuffle_deck[4] %>.svg">
+<% for card in hand%>
+<img src="/images/cards/<%= card %>.svg">
+<% end %>
